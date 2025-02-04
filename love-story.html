@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffebee; /* Light pink background */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            color: #d32f2f; /* Romantic red */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button.yes {
+            background-color: #4caf50; /* Green for "Yes" */
+            color: white;
+        }
+        button.no {
+            background-color: #f44336; /* Red for "No" */
+            color: white;
+        }
+        button.yes:hover {
+            background-color: #388e3c;
+            transform: scale(1.1);
+        }
+        button.no:hover {
+            background-color: #d32f2f;
+            transform: scale(1.1);
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: absolute;
+            top: -50px;
+            font-size: 2rem;
+            color: #ff4d4d;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Hidden Love Letter Link */
+        .love-letter {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .love-letter:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Player (Hidden) -->
+    <audio autoplay loop>
+        <source src="https://open.spotify.com/track/2UiKfbpCpOvdb7z5DiRiVc?si=ade406ba8d614e63" type="audio/mpeg">
+        
+    </audio>
+
+    <div class="container">
+        <h1>Will You Be My Valentine?</h1>
+        <p>My love, you make every day special. Will you make this Valentine's Day unforgettable by being mine?</p>
+        <div class="buttons">
+            <button class="yes" onclick="showLoveLetter()">Yes</button>
+            <button class="no" onclick="alert('Aww, I\'ll keep trying! 😊')">No</button>
+        </div>
+        <a id="loveLetterLink" class="love-letter" href="#love-letter-content" target="_blank">Read My Love Letter to You 💌</a>
+    </div>
+    <div class="heart">❤️</div>
+
+    <!-- Love Letter Content -->
+    <div id="love-letter-content" style="display: none;">
+        <h2>My Dearest [Her Name],</h2>
+        <p>
+            From the moment you came into my life, everything changed. You brought a light that I didn’t even know was missing, and every day since then has been brighter because of you. I often find myself wondering how I got so lucky to have someone as incredible as you by my side.
+        </p>
+        <p>
+            You are my best friend, my confidant, and my greatest source of joy. Your smile is my favorite sight, your laugh is my favorite sound, and your love is my greatest treasure. You have this amazing ability to make even the simplest moments feel magical, and I cherish every second we spend together.
+        </p>
+        <p>
+            I admire your kindness, your strength, and the way you see the good in everything. You inspire me to be a better person, and I’m so grateful for the love and support you give me every day. With you, I feel like I can conquer anything, and I know that no matter what life throws our way, we’ll face it together.
+        </p>
+        <p>
+            This Valentine’s Day, I want you to know how much you mean to me. You are my everything, and I can’t imagine my life without you. I love you more than words can express, and I’m so excited for all the adventures we’ll share in the future.
+        </p>
+        <p>
+            Will you be my Valentine, not just this year, but every year for the rest of our lives? I promise to love you, cherish you, and stand by you through everything. You are my forever, and I’m so lucky to call you mine.
+        </p>
+        <p>
+            With all my love,<br>
+            João 💖
+        </p>
+    </div>
+
+    <script>
+        function showLoveLetter() {
+            alert('Yay! I love you so much! 💖');
+            document.getElementById('loveLetterLink').style.display = 'block';
+            document.getElementById('loveLetterLink').href = '#love-letter-content';
+            document.getElementById('love-letter-content').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
